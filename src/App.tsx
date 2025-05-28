@@ -80,8 +80,6 @@ export default function App() {
           </motion.div>
         </motion.section>
 
-        <Divider className="my-8" />
-
         {/* Projects Section */}
         <motion.section
           className="py-8"
@@ -140,7 +138,7 @@ export default function App() {
           whileInView={{ opacity: 1 }}
         >
           <h2 className="text-2xl font-semibold mb-6">Experience</h2>
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col gap-6">
             <ExperienceCard
               company="Tech Innovations Inc."
               description="Lead the development of the company's flagship web application, managing a team of 4 developers and implementing best practices for code quality and performance."

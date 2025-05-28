@@ -21,9 +21,9 @@ const Recommendation: React.FC<RecommendationProps> = ({
   return (
     <Card>
       <CardBody className="p-6">
-        <p className="text-default-500 italic mb-4">"{text}"</p>
+        <p className="text-default-500 italic mb-4">&quot;{text}&quot;</p>
         <div className="flex items-center gap-4">
-          <Avatar isBordered className="w-200 h-200" src={avatarUrl} />
+          <Avatar isBordered size="sm" src={avatarUrl} />
           <div>
             <p className="font-medium">{name}</p>
             <p className="text-default-500 text-sm">
