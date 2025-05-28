@@ -31,7 +31,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              John Doe
+              Joel Corona
             </motion.h1>
             <motion.h2
               animate={{ opacity: 1 }}
@@ -65,8 +65,19 @@ export default function App() {
               >
                 View Projects
               </Button>
-              <Button as={Link} href="#contact" variant="flat">
-                Contact Me
+              <Button variant="flat">
+                <Link
+                  color="foreground"
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  Contact Me
+                </Link>
               </Button>
             </motion.div>
           </div>
@@ -251,7 +262,7 @@ export default function App() {
 
       <footer className="border-t border-divider py-6 mt-12">
         <div className="max-w-4xl mx-auto px-4 text-center text-default-500">
-          <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Joel Corona. All rights reserved.</p>
         </div>
       </footer>
     </div>

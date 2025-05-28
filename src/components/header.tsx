@@ -13,29 +13,70 @@ export const Header: React.FC = () => {
     >
       <Navbar className="border-b border-divider" maxWidth="xl">
         <NavbarBrand>
-          <p className="font-bold text-inherit">JOHN DOE</p>
+          <p className="font-bold text-inherit">JOEL CORONA</p>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
-            <Link color="foreground" href="#" underline="hover">
+            <Link
+              color="foreground"
+              href="#"
+              underline="hover"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("#")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Home
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#projects" underline="hover">
+            <Link
+              color="foreground"
+              href="#projects"
+              underline="hover"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Projects
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#experience" underline="hover">
+            <Link
+              color="foreground"
+              href="#experience"
+              underline="hover"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("experience")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Experience
             </Link>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem>
-            <Button as={Link} color="primary" href="#contact" variant="flat">
-              Contact
+            <Button variant="flat">
+              <Link
+                color="foreground"
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Contact
+              </Link>
             </Button>
           </NavbarItem>
         </NavbarContent>
