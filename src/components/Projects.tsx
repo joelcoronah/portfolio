@@ -1,15 +1,15 @@
 import { ArrowUpRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "./ui/badge";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import projectEcommerce from "@/assets/project-ecommerce.jpg";
-import projectTaskapp from "@/assets/project-taskapp.jpg";
-import projectAi from "@/assets/project-ai.jpg";
+} from "./ui/carousel";
+import projectEcommerce from "../assets/project-ecommerce.jpg";
+import projectTaskapp from "../assets/project-taskapp.jpg";
+import projectAi from "../assets/project-ai.jpg";
 
 const projects = [
   {

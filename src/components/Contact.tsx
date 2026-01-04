@@ -1,5 +1,5 @@
 import { Mail, MapPin, Linkedin, ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 
 const Contact = () => {
   return (
