@@ -7,32 +7,38 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-import projectEcommerce from "../assets/project-ecommerce.jpg";
-import projectTaskapp from "../assets/project-taskapp.jpg";
-import projectAi from "../assets/project-ai.jpg";
+import invoiceSplitter from "../assets/invoice-splitter.png";
+import bcvApi from "../assets/BCV-LOGO.jpg";
+import chatRealTime from "../assets/real-time-chat.png";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with cart, payments, and admin dashboard. Built for scale with real-time inventory management.",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    image: projectEcommerce,
-    link: "#"
+    title: "Invoice Splitter",
+    description:
+      "Divvy up bills with anyone. Split bills easily among friends with support for multiple currencies, tax calculations, and tip distribution. Features real-time BCV exchange rate integration.",
+    tech: ["React", "TypeScript", "BCV API", "Netlify"],
+    link: "https://invoice-splitter.netlify.app/",
+    gradient: "from-blue-500 to-purple-600",
+    image: invoiceSplitter,
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates, team features, and beautiful kanban boards.",
-    tech: ["TypeScript", "Next.js", "Prisma", "WebSocket"],
-    image: projectTaskapp,
-    link: "#"
+    title: "BCV Rate API",
+    description:
+      "RESTful API to get daily exchange rates from the Venezuelan Central Bank (BCV) for USD and EUR. Includes health check endpoint and clean JSON responses.",
+    tech: ["Node.js", "Express", "REST API", "Netlify"],
+    link: "https://bcv-api.netlify.app/",
+    gradient: "from-green-500 to-teal-600",
+    image: bcvApi,
   },
   {
-    title: "AI Chat Assistant",
-    description: "Intelligent chatbot interface with context awareness and natural language processing for customer support.",
-    tech: ["Python", "FastAPI", "OpenAI", "React"],
-    image: projectAi,
-    link: "#"
-  }
+    title: "Real-Time Chat",
+    description:
+      "Full-stack real-time chat application with WebSocket support. Features instant messaging, user join notifications, and a modern, responsive interface.",
+    tech: ["WebSocket", "React", "Node.js", "Vercel"],
+    link: "https://chat-real-time-mu.vercel.app/",
+    gradient: "from-orange-500 to-pink-600",
+    image: chatRealTime,
+  },
 ];
 
 const Projects = () => {
@@ -43,7 +49,7 @@ const Projects = () => {
         <h2 className="font-display text-4xl md:text-5xl font-semibold mb-16">
           Featured Work
         </h2>
-        
+
         {/* Carousel Container */}
         <div className="relative px-8 md:px-0">
           <Carousel
@@ -55,21 +61,30 @@ const Projects = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <a 
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
+                >
+                  <a
                     href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group block bg-card rounded-2xl overflow-hidden shadow-soft card-hover h-full"
                   >
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={project.image} 
+                    {/* Image/Gradient */}
+                    <div className={`relative h-48 overflow-hidden`}>
+                      <img
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-white/20 text-6xl font-bold">
+                          {project.title.charAt(0)}
+                        </div>
+                      </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div className="p-6">
                       <div className="flex items-start justify-between mb-3">
@@ -78,16 +93,16 @@ const Projects = () => {
                         </h3>
                         <ArrowUpRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                       </div>
-                      
+
                       <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                         {project.description}
                       </p>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech) => (
-                          <Badge 
-                            key={tech} 
-                            variant="outline" 
+                          <Badge
+                            key={tech}
+                            variant="outline"
                             className="text-xs rounded-full"
                           >
                             {tech}
