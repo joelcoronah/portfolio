@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 import { ExternalLink } from "lucide-react";
 
 const skills = [
@@ -159,6 +161,9 @@ const experience = [
 ];
 
 const About = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedExperience = showAll ? experience : experience.slice(0, 5);
+
   return (
     <section id="about" className="py-24 bg-card">
       <div className="container mx-auto px-6">
@@ -172,7 +177,7 @@ const About = () => {
           <div>
             <h3 className="text-lg font-semibold mb-8">Experience</h3>
             <div className="space-y-8">
-              {experience.map((exp, index) => (
+              {displayedExperience.map((exp, index) => (
                 <div
                   key={index}
                   className="relative pl-8 border-l-2 border-border hover:border-accent transition-colors"
@@ -223,6 +228,17 @@ const About = () => {
                 </div>
               ))}
             </div>
+            {experience.length > 5 && (
+              <Button
+                variant="outline"
+                onClick={() => setShowAll(!showAll)}
+                className="mt-6 w-full"
+              >
+                {showAll
+                  ? "Show Less"
+                  : `Show More (${experience.length - 5} more)`}
+              </Button>
+            )}
           </div>
 
           {/* Skills */}
