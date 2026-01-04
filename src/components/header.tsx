@@ -1,86 +1,47 @@
-import { Button } from "@heroui/button";
-import { Link } from "@heroui/link";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
-import { motion } from "framer-motion";
-import React from "react";
+import { Button } from "@/components/ui/button";
 
-export const Header: React.FC = () => {
+const Header = () => {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <motion.div
-      animate={{ y: 0, opacity: 1 }}
-      initial={{ y: -20, opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Navbar className="border-b border-divider" maxWidth="xl">
-        <NavbarBrand>
-          <p className="font-bold text-inherit">JOEL CORONA</p>
-        </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem>
-            <Link
-              color="foreground"
-              href="#"
-              underline="hover"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("#")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Home
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              color="foreground"
-              href="#projects"
-              underline="hover"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Projects
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              color="foreground"
-              href="#experience"
-              underline="hover"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("experience")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Experience
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Button variant="flat">
-              <Link
-                color="foreground"
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Contact
-              </Link>
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
-      </Navbar>
-    </motion.div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" className="font-display text-xl font-semibold text-foreground">
+          Portfolio
+        </a>
+        
+        <div className="flex items-center gap-8">
+          <button 
+            onClick={() => scrollTo("about")}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            About
+          </button>
+          <button 
+            onClick={() => scrollTo("projects")}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Work
+          </button>
+          <button 
+            onClick={() => scrollTo("testimonials")}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Reviews
+          </button>
+          <Button 
+            size="sm" 
+            onClick={() => scrollTo("contact")}
+            className="rounded-full px-6"
+          >
+            Contact
+          </Button>
+        </div>
+      </nav>
+    </header>
   );
 };
+
+export default Header;
