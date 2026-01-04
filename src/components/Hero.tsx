@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
-import profilePhoto from "../assets/profile-photo.jpg";
+import profilePhoto from "../assets/profile.png";
 
 const Hero = () => {
   return (
@@ -16,7 +16,7 @@ const Hero = () => {
               <div className="absolute -inset-4 bg-accent/20 rounded-3xl rotate-3" />
               <img
                 src={profilePhoto}
-                alt="John Developer"
+                alt="Joel Corona"
                 className="relative w-72 h-72 md:w-80 md:h-80 object-cover rounded-2xl shadow-card"
               />
             </div>
@@ -35,7 +35,7 @@ const Hero = () => {
               className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 animate-fade-up"
               style={{ animationDelay: "0.3s" }}
             >
-              John Developer
+              Joel
             </h1>
 
             <p
@@ -65,7 +65,7 @@ const Hero = () => {
                 asChild
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/joelcoronah"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -80,7 +80,7 @@ const Hero = () => {
                 asChild
               >
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/joelcoronah"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -94,7 +94,7 @@ const Hero = () => {
                 className="rounded-full card-hover"
                 asChild
               >
-                <a href="mailto:hello@example.com" aria-label="Email">
+                <a href="mailto:joelcoronah@gmail.com" aria-label="Email">
                   <Mail className="w-5 h-5" />
                 </a>
               </Button>

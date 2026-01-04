@@ -6,7 +6,7 @@ const Footer = () => {
           Portfolio
         </p>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} John Developer. All rights reserved.
+          © {new Date().getFullYear()} Joel Corona. All rights reserved.
         </p>
       </div>
     </footer>
