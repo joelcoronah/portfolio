@@ -8,10 +8,20 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import invoiceSplitter from "../assets/invoice-splitter.png";
+import docflow from "../assets/docflow.png";
 import bcvApi from "../assets/BCV-LOGO.jpg";
 import chatRealTime from "../assets/real-time-chat.png";
 
 const projects = [
+  {
+    title: "Docflow",
+    description:
+      "Comprehensive medical practice management system for scheduling appointments, managing patient records, and tracking medical history. Features calendar view, patient management, and appointment notifications.",
+    tech: ["React", "Node.js", "PostgreSQL", "Railway"],
+    link: "https://docflow-schedule-production.up.railway.app/",
+    gradient: "from-teal-500 to-cyan-600",
+    image: docflow,
+  },
   {
     title: "Invoice Splitter",
     description:
