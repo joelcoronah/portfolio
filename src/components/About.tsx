@@ -160,6 +160,18 @@ const experience = [
   },
 ];
 
+const education = [
+  {
+    degree: "Telecommunications Engineering",
+    institution: "Universidad de Carabobo",
+    period: "2025",
+    location: "Valencia, Carabobo, Venezuela",
+    description:
+      "Specialized in software development, network systems, and telecommunications infrastructure. Completed thesis on detection of epileptic seizures in electroencephalography signals using deep neural networks.",
+    institutionLinkedIn: "https://www.linkedin.com/company/377097/",
+  },
+];
+
 const About = () => {
   const [showAll, setShowAll] = useState(false);
   const displayedExperience = showAll ? experience : experience.slice(0, 5);
@@ -172,7 +184,8 @@ const About = () => {
           Career & Expertise
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        {/* Experience & Education Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 mb-16">
           {/* Experience */}
           <div>
             <h3 className="text-lg font-semibold mb-8">Experience</h3>
@@ -240,6 +253,58 @@ const About = () => {
               </Button>
             )}
           </div>
+
+          {/* Education */}
+          <div>
+            <h3 className="text-lg font-semibold mb-8">Education</h3>
+            <div className="space-y-8">
+              {education.map((edu, index) => (
+                <div
+                  key={index}
+                  className="relative pl-8 border-l-2 border-border hover:border-accent transition-colors"
+                >
+                  <div className="absolute left-[-5px] top-1 w-2 h-2 rounded-full bg-accent" />
+                  <p className="text-xs text-accent font-medium mb-1 uppercase tracking-wider">
+                    {edu.period}
+                  </p>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    {edu.degree}
+                  </h4>
+                  <div className="flex items-center gap-2 mb-2">
+                    {edu.institutionLinkedIn ? (
+                      <a
+                        href={edu.institutionLinkedIn}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground text-sm hover:text-accent transition-colors flex items-center gap-1 group"
+                      >
+                        {edu.institution}
+                        <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
+                    ) : (
+                      <p className="text-muted-foreground text-sm">
+                        {edu.institution}
+                      </p>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground text-xs mb-2 italic">
+                    {edu.location}
+                  </p>
+                  {edu.description && (
+                    <p className="text-muted-foreground text-sm">
+                      {edu.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Left column spacer */}
+          <div></div>
 
           {/* Skills */}
           <div>
