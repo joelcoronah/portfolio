@@ -19,8 +19,8 @@ const calculateExperience = (startDate: string, endDate: string) => {
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : new Date();
   const diffTime = Math.abs(end.getTime() - start.getTime());
-  const diffYears = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 365.25));
-  return diffYears;
+  const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return diffMonths;
 };
 
 const experience = [
