@@ -14,11 +14,20 @@ const skills = [
   "Git",
 ];
 
+const calculateExperience = (startDate: string, endDate: string) => {
+  if (!startDate || !endDate) return 0;
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+  const diffTime = Math.abs(end.getTime() - start.getTime());
+  const diffYears = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+  return diffYears;
+};
+
 const experience = [
   {
     title: "Full Stack Engineer",
     company: "Cumplo",
-    period: "May 2025 — Present · 9 months",
+    period: `May 2025 — Present · ${calculateExperience("2025-05-01", new Date().toISOString())} months`,
     location: "Gran Santiago, Región Metropolitana de Santiago, Chile · Remote",
     description:
       "Working as a full stack engineer with Next.js, React.js, Strapi, and Amazon Web Services (AWS).",
