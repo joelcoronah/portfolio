@@ -132,14 +132,14 @@ const testimonials = [
     role: "Desarrollador Full Stack SSR | WeB Dev | MERN | React | Angular | NodeJS | NestJS | NextJS | AWS | Ionic | Fullstack Developer",
     avatarUrl: franciscoHerreraPetit,
   },
-  // {
-  //   quote:
-  //     "Joel posee todas las cualidades que un profesional del área debe tener a mano, es una persona dedicada, responsable, concentrada, capaz de liderar y resolver problemas por si solo, sugiere buenas ideas y tiene iniciativa siempre. Muy recomendado.",
-  //   name: "Ansony Alvarado",
-  //   role: "Full Stack Developer | NodeJs | NestJs | Serverless | AWS | Angular+2 | +5 years' experience",
-  //   avatarUrl:
-  //     "https://media.licdn.com/dms/image/v2/D4E03AQEqliPHtcggow/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1683048057419?e=1769040000&v=beta&t=7z8JszSXnCpSXpI6bfQ5kXrbv1fhbdtzeo0eToriqcs",
-  // },
+  {
+    quote:
+      "Joel posee todas las cualidades que un profesional del área debe tener a mano, es una persona dedicada, responsable, concentrada, capaz de liderar y resolver problemas por si solo, sugiere buenas ideas y tiene iniciativa siempre. Muy recomendado.",
+    name: "Ansony Alvarado",
+    role: "Full Stack Developer | NodeJs | NestJs | Serverless | AWS | Angular+2 | +5 years' experience",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/D4E03AQEqliPHtcggow/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1683048057419?e=1769040000&v=beta&t=7z8JszSXnCpSXpI6bfQ5kXrbv1fhbdtzeo0eToriqcs",
+  },
   {
     quote:
       "Estudié y trabaje con Joel Corona. En el área de la programación afronta retos continuamente otorgando respuestas y soluciones de calidad, aunado a la alta potencialidad que posee de análisis críticos, rápida adaptación y constante aprendizaje.",

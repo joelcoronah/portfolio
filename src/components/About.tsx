@@ -14,20 +14,25 @@ const skills = [
   "Git",
 ];
 
-const calculateExperience = (startDate: string, endDate: string) => {
-  if (!startDate || !endDate) return 0;
+const calculateExperienceYearsAndMonths = (
+  startDate: string,
+  endDate: string | Date = new Date().toISOString(),
+) => {
   const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : new Date();
-  const diffTime = Math.abs(end.getTime() - start.getTime());
-  const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  return diffMonths;
+  const end = new Date(endDate);
+  const diffTime = end.getTime() - start.getTime();
+  const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+  const diffMonths = Math.floor(
+    (diffTime % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44),
+  );
+  return `${diffYears} year${diffYears > 1 ? "s" : ""} ${diffMonths} month${diffMonths > 1 ? "s" : ""}`;
 };
 
 const experience = [
   {
     title: "Full Stack Engineer",
     company: "Cumplo",
-    period: `May 2025 — Present · ${calculateExperience("2025-05-01", new Date().toISOString())} months`,
+    period: `May 2025 — Present · ${calculateExperienceYearsAndMonths("2025-05-01", new Date().toISOString())}`,
     location: "Gran Santiago, Región Metropolitana de Santiago, Chile · Remote",
     description:
       "Working as a full stack engineer with Next.js, React.js, Strapi, and Amazon Web Services (AWS).",
